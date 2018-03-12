@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source bin/activate
+
+if [ -e .env ]; then
+    export $(cat .env | xargs)
+else
+    echo "Create the missing '.env' file containing the environment variables and rerun after_push"
+    exit 1
+fi
+
+pip install .
+
+python manage.py migrate --noinput
+DJANGO_MODE=Build python manage.py collectstatic --noinput

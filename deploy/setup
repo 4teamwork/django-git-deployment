@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ ! -d bin/activate ]; then
+    if [ -x /usr/local/python/3.6.2/bin/python3 ]; then
+    /usr/local/python/3.6.2/bin/python3 -m venv .
+    else
+    python3 -m venv .
+    fi
+fi
+
+echo "Create the missing '.env' file containing the environment variables and rerun after_push"
