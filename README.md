@@ -26,7 +26,6 @@ The deployment should already exist and buildout should have ran once.
 ```sh
 $ gem install git-deploy
 $ cd the-package-repository
-$ git remote add deployment_name "user@example.com:/path/to/desired/project/folder"
 $ git deploy setup -r "testing"
 $ git push testing master
 ```
