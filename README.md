@@ -12,16 +12,9 @@ For Django, the scripts can simply be downloaded like this:
 
 ```sh
 $ cd the-package-repository
-$ mkdir deploy
-$ cd deploy
-$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/after_push
-$ chmod +x after_push
-$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/before_restart
-$ chmod +x before_restart
-$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/restart
-$ chmod +x restart
-$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/setup
-$ chmod +x setup
+$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/setup.sh
+$ chmod +x setup.sh
+$ ./setup.sh
 ```
 
 ## Setup GIT hooks on server
@@ -33,6 +26,7 @@ The deployment should already exist and buildout should have ran once.
 ```sh
 $ gem install git-deploy
 $ cd the-package-repository
+$ git remote add deployment_name "user@example.com:/path/to/desired/project/folder"
 $ git deploy setup -r "testing"
 $ git push testing master
 ```
@@ -44,6 +38,5 @@ the server (without installing `git-deploy`):
 
 ```sh
 $ cd the-package-repository
-$ ./scripts/setup-git-remotes
 $ git push testing master
 ```
