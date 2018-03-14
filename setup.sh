@@ -14,8 +14,8 @@ else
     # NEW
     echo "This will create:"
     echo "./deploy/*"
-    echo "./tmp/*"
     echo "./log"
+    echo "./tmp"
     echo ""
 
     while true; do
@@ -31,7 +31,7 @@ else
     echo "----- SETUP -----"
     set -v
 
-    mkdir -p deploy tmp scripts
+    mkdir -p deploy log tmp
     curl https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/after_push > deploy/after_push
     curl https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/before_restart > deploy/before_restart
     curl https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/restart > deploy/restart
@@ -39,13 +39,12 @@ else
     chmod +x deploy/after_push
     chmod +x deploy/before_restart
     chmod +x deploy/restart
-    chmod +x scripts/setup
+    chmod +x deploy/setup
 
     set +v
     echo "----- DONE -----"
     echo ""
     echo "Next steps:"
-    echo "- update remote names and URLs"
+    echo "- update git remotes"
     echo "- git-commit the changes"
-    echo "- run scripts/setup-git-remotes"
 fi
