@@ -12,7 +12,7 @@ For Django, the scripts can simply be downloaded like this:
 
 ```sh
 $ cd the-package-repository
-$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/deploy/setup.sh
+$ wget https://raw.githubusercontent.com/4teamwork/django-git-deployment/master/setup.sh
 $ chmod +x setup.sh
 $ ./setup.sh
 ```
