@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Setting up plone git push deployment at `pwd`"
+echo "Setting up django git push deployment at `pwd`"
 echo ""
 
 if [ -e deploy/after_push ]; then
